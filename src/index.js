@@ -20,11 +20,11 @@ function onCountryInput(evt){
     fetchCountries(name).then(country => {
         clearHTML();
         if (country.length === 1) {
-            countryInfoEl.insertAdjacentHTML('beforeend', createOneCountryMarkup(country));
-        } else if(country.length > 10){
+            createOneCountryMarkup(country);
+        } else if(country.length >= 10){
             Notiflix.Notify.failure('Too many matches found. Please enter a more specific name.');
         } else {
-            countryListEl.insertAdjacentHTML('beforeend', createListOfCountryMarkup(country));
+            createListOfCountryMarkup(country);
         };
     })
         .catch(Notiflix.Notify.warning('Oops, there is no country with that name'));
