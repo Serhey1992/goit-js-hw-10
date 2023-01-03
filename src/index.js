@@ -13,7 +13,7 @@ const DEBOUNCE_DELAY = 300;
 inputEl.addEventListener('input', debounce(onCountryInput, DEBOUNCE_DELAY));
 
 function onCountryInput(evt){
-    const name = evt.value;
+    const name = inputEl.value.trim();
     if (name === '') {
        return clearHTML();
     }
@@ -38,8 +38,7 @@ function clearHTML() {
 
 
 function createOneCountryMarkup() {
-    const countryMarkup = country.map(({ name, flags, capital, population, languages }) => `
-    <li class="country-list__item">
+    const countryMarkup = country.map(({ name, flags, capital, population, languages }) => `<li class="country-list__item">
         <img class="country-list__item--flag" src="${flags.svg}" alt="flag of ${name.official}">
         <h2 class="country-list__item--name">${name.official}</h2>
         <h3 class="country-list__item--capital">Capital:${capital}</h3>
