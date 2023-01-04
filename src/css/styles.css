@@ -18,3 +18,20 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+.country-list{
+  padding: 0;
+  list-style: none;
+}
+.country-list_conteiner{
+  display: flex;
+  column-gap: 10px;
+}
+.country-list__item--flag{
+  display: block;
+  width: 60px;
+}
+.country-list__item--capital,
+.country-list__item--population,
+.country-list__item--languages{
+  margin-top: 0;
+}
